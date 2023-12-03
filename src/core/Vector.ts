@@ -54,8 +54,6 @@ export class Vector {
   }
 
   copy() {
-    return {
-      ...this,
-    };
+    return new Vector(this.x, this.y);
   }
 }
