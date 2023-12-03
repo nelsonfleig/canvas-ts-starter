@@ -40,7 +40,7 @@ export class Vector {
 
   normalize() {
     const m = this.mag();
-    if (m === 0) throw new Error('Cannot normalize a zero-length vector');
+    if (m === 0) return this;
     return this.div(m);
   }
 
