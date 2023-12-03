@@ -8,8 +8,8 @@ Work in progress...
 
 But hopefully some of the main features will be:
 
-- Vector util class for more of a p5.js type experience
-- Some helpful utils for getting a random integer from range, perlin noise, and more... (probably just taken off the p5.js source code)
+- Vector class to create movement using linear algebra
+- Some helpful general utils (probably just taken off the p5.js source code or things I see myself doing again and again)
 - Typescript
 - Webpack with HMR
 - Eslint, prettier, husky, and all that jazz
