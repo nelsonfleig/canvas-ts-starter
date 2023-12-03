@@ -53,7 +53,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'Webpack App',
+      title: 'Canvas TS Starter',
       filename: 'index.html',
       template: 'src/template.html',
     }),
