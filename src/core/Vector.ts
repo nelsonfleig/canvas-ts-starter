@@ -44,6 +44,15 @@ export class Vector {
     return this.div(m);
   }
 
+  limit(max: number) {
+    const m = this.mag();
+    if (m > max) {
+      this.div(m) //normalize it
+        .mult(max); //then rescale to max
+    }
+    return this;
+  }
+
   copy() {
     return {
       ...this,
