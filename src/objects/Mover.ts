@@ -1,15 +1,32 @@
 import { Vector } from '../core';
 
-export class Thing {
-  public position: Vector;
-  public velocity: Vector;
-  public radius: number;
-  public speed: number;
+interface IMover {
+  position: Vector;
+  velocity: Vector;
+  acceleration: Vector;
+  radius: number;
+  mass: number;
+}
 
-  constructor(position: Vector, velocity: Vector, radius: number) {
+export class Mover implements IMover {
+  position: Vector;
+  velocity: Vector;
+  acceleration: Vector;
+  radius: number;
+  mass: number;
+
+  constructor({
+    position = new Vector(),
+    velocity = new Vector(),
+    acceleration = new Vector(),
+    radius = 10,
+    mass = 1,
+  }: Partial<IMover>) {
     this.position = position;
     this.velocity = velocity;
+    this.acceleration = acceleration;
     this.radius = radius;
+    this.mass = mass;
   }
   update(c: CanvasRenderingContext2D) {
     this.draw(c);
@@ -26,7 +43,7 @@ export class Thing {
   draw(c: CanvasRenderingContext2D) {
     c.save();
     c.beginPath();
-    c.arc(this.position.x, this.position.y, 10, 0, Math.PI * 2);
+    c.arc(this.position.x, this.position.y, this.radius, 0, Math.PI * 2);
     c.fillStyle = 'red';
     c.fill();
     c.closePath();

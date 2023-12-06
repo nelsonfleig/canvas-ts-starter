@@ -1,6 +1,6 @@
 import { Vector } from './core';
 import './styles/main.scss';
-import { Thing } from './things/Thing';
+import { Mover } from './objects';
 
 const canvas = document.querySelector('canvas');
 const c = canvas.getContext('2d');
@@ -27,12 +27,12 @@ addEventListener('resize', () => {
 });
 
 // Implementation
-let ball: Thing;
+let ball: Mover;
 
 function init() {
   const startPosition = new Vector(canvas.width / 2, canvas.height / 2);
   const velocity = new Vector(5, 5);
-  ball = new Thing(startPosition, velocity, 10);
+  ball = new Mover({ position: startPosition, velocity });
 }
 
 // Animation Loop

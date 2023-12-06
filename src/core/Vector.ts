@@ -1,41 +1,47 @@
 /**
- * A simple 2D vector class
+ * A simple 3D vector class
  */
 export class Vector {
   public x: number;
   public y: number;
+  public z: number;
 
-  constructor(x: number, y: number) {
+  constructor(x = 0, y = 0, z = 0) {
     this.x = x;
     this.y = y;
+    this.z = z;
   }
 
   add(vector: Vector) {
     this.x += vector.x;
     this.y += vector.y;
+    this.z += vector.z;
     return this;
   }
 
   sub(vector: Vector) {
     this.x -= vector.x;
     this.y -= vector.y;
+    this.z -= vector.z;
     return this;
   }
 
   mult(n: number) {
     this.x *= n;
     this.y *= n;
+    this.z *= n;
     return this;
   }
 
   div(n: number) {
     this.x /= n;
     this.y /= n;
+    this.z /= n;
     return this;
   }
 
   mag() {
-    return Math.hypot(this.x, this.y);
+    return Math.hypot(this.x, this.y, this.z);
   }
 
   normalize() {
@@ -54,6 +60,6 @@ export class Vector {
   }
 
   copy() {
-    return new Vector(this.x, this.y);
+    return new Vector(this.x, this.y, this.z);
   }
 }
