@@ -1,6 +1,6 @@
 import { Vector } from './core';
-import './styles/main.scss';
 import { Mover } from './objects';
+import './styles/main.scss';
 
 const canvas = document.querySelector('canvas');
 const c = canvas.getContext('2d');

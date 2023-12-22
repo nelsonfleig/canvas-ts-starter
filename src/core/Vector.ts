@@ -59,6 +59,16 @@ export class Vector {
     return this;
   }
 
+  /**
+   * Calculates the angle a 2D vector makes with the positive x-axis.
+   *
+   * Note: 2D only
+   * @returns the angle of the vector in radians
+   */
+  heading() {
+    return Math.atan2(this.y, this.x);
+  }
+
   copy() {
     return new Vector(this.x, this.y, this.z);
   }
